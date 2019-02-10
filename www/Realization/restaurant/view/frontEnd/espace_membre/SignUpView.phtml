@@ -1,0 +1,119 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: Yacine
+ * Date: 11/13/2018 0013
+ * Time: 12:05 AM
+ */
+ob_start(); ?>
+    <main>
+        <form action="/www/Realization/restaurant/index.php?action=checkSignUp" method="post" id="sign_up_form">
+    <fieldset>
+        <legend><i class="fas fa-lock"></i> identitée et coordonnéees</legend>
+        <div class="clear"></div>
+        <table class="container">
+            <tr>
+                <td><label for="Prenom">Prenom: </label></td>
+                <td><input type="text" name="Prenom" pattern="[a-zA-Z]{3,20}" id="Prenom">
+                    <span id="aidePrenom"></span>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="Nom">Nom: </label></td>
+                <td><input type="text" name="Nom" pattern="[a-zA-Z]{3,20}" id="Nom">
+                    <span id="aideNom"></span>
+                </td>
+            </tr>
+            <tr>
+                <td><label>Date de naissance:</label></td>
+                <?php require 'date_naissance_input.php' ?>
+            </tr>
+            <tr>
+                <td style="vertical-align: top"><label>adresse:</label></td>
+                <td><textarea name="adresse" placeholder="103 Rue jean bernard" rows="7" cols="25" pattern="<span a-zA-Z0-9_="></textarea></td>
+            </tr>
+            <tr>
+                <td><label>ville:</label></td>
+                <td><input type="text" name="ville" id="ville" placeholder="roubaix">
+                    <span id="aideVille"></span>
+                </td>
+            </tr>
+            <tr>
+                <td><label>code postal:</label></td>
+                <td><input type="text" name="Code_postal" pattern="[0-9]{5}" id="Code_postal" maxlength="5" size="5"
+                           placeholder="00000">
+                    <span id="aideCodePostal"></span>
+
+                </td>
+            </tr>
+            <tr>
+                <td><label>telephone:</label></td>
+                <td><input type="text" name="telephone" id="telephone" pattern="^([0]\d\s)(\d\d\s){3}(\d\d)$"
+                           maxlength="15" size="12" placeholder="01 23 45 67 89">
+                    <span id="aidePhone"></span>
+                </td>
+            </tr>
+        </table>
+
+    </fieldset>
+
+
+        <fieldset>
+            <legend><i class="fas fa-lock"></i> information d'authentification</legend>
+            <div class="clear"></div>
+            <table class="container">
+                <tr>
+                    <td>
+                        <label for="email1"> email</label> :
+                    </td>
+                    <td>
+                        <input type="email" name="email" id="email1" required>
+                        <span id="aideEmail1"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="email2">Confirmation email</label> :
+                    </td>
+                    <td>
+                        <input type="email" name="email1" id="email2" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="mdp1">mot de passe</label> :
+                    </td>
+                    <td>
+                        <input type="password" name="mdp" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" id="mdp1"
+                               required>
+                        <span id="aideMdp1"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="mdp2">Confirmation mot de passe</label> :
+                    </td>
+                    <td>
+                        <input type="password" name="mdp2" id="mdp2" required>
+                        <span id="aideMdp2"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td><p></p></td>
+                    <td>
+                        <p>
+                            <button type="submit" id="Ajouter" name="Inscription">Ajouter</button>
+                            <button type="reset" id="Annuler">Annuler</button>
+                        </p>
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+</form>
+    </main>
+    <script src="/www/Realization/restaurant/public/js/verification_sign_up.js"></script>
+<?php
+$content = ob_get_clean();
+$title = 'page d\'inscription';
+require 'view/layout.phtml';
+?>

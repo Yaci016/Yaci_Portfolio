@@ -1,0 +1,101 @@
+<?php ob_start(); ?>
+ <h1 class="Unselectable_text StyleHeaders">Presentation</h1>
+<section id="about" class="Unselectable_text">
+        <article class="white_background_round_border">
+            <img src="www/images/Image_description.jpg" alt="Yaci">
+        </article>
+
+        <article id="description_wrapper" class="white_background_round_border">
+            <div id="wrapper_Identifiant">
+                <h2 id="Nom_Prenom">Yacine KHERBACHE</h2>
+                <h3 id="Metier">développeur web</h3>
+            </div>
+
+            <h4 id="Bienvenue">Bonjour et bienvenue sur mon portfolio. </h4>
+
+            <p id="Paragraphe_Description">Je suis Yacine, j'ai 21 ans, et ma passion pour le développement web a débuté très tôt. Via Openclassooms, Code Academy, Medium ou des poadcats, j'ai voulu acquérir une base solide avant de rejoindre la 3W Academy. Je suis d'ailleurs en cours d'auto apprentissage sur ReactJS.
+</p>
+
+            <p id="Citation_Personelle"><q><strong>Soif de connaissance, je ne cesse d’apprendre chaque jour de nouveau concepts dans le vaste monde du numerique.</strong></q></p>
+            <a href="www/pdf/Yacine_DevWeb.pdf" title="CV" class="button_CV">CV</a>
+        </article>
+    </section>
+    <section id="competencies">
+       <h1 class="Unselectable_text StyleHeaders">Compétences</h1>
+        <article id="html5" class=" white_background_round_border  sous-section">
+            <img src="www/images/compétences/html5.jpg" alt="icon html5 html">
+        </article>
+        <article id="css3" class=" white_background_round_border  sous-section">
+            <img src="www/images/compétences/css3.png" alt="icon css3 css">
+        </article>
+        <article id="javascript" class=" white_background_round_border  sous-section">
+            <img src="www/images/compétences/js.png" alt="icon javascript">
+        </article>
+        <article id="php" class=" white_background_round_border  sous-section">
+            <img src="www/images/compétences/php.png" alt="icon php">
+        </article>
+        <article id="MySQL" class=" white_background_round_border sous-section">
+            <img src="www/images/compétences/MySQL.png" alt="icon MySQL">
+        </article>
+         <article id="WordPress" class=" white_background_round_border sous-section">
+            <img src="www/images/compétences/WordPress.png" alt="icon wordPress cms">
+        </article>
+        <article id="bootstrap" class=" white_background_round_border  sous-section">
+            <img src="www/images/compétences/bootstrap.png" alt="icon bootstrap css">
+        </article>
+         <article id="Sass" class=" white_background_round_border sous-section">
+            <img src="www/images/compétences/sass.png" alt="icon sass">
+        </article>
+         <article id="jquery" class=" white_background_round_border sous-section">
+            <img src="www/images/compétences/jquery.gif" alt="icon jquery">
+        </article>
+         <article id="ajax" class=" white_background_round_border sous-section">
+            <img src="www/images/compétences/AJAX.png" alt="icon ajax">
+        </article>
+        <article id="git" class=" white_background_round_border sous-section">
+            <img src="www/images/compétences/git.png" alt="icon git">
+        </article>
+        <article id="ProblemSolver" class=" white_background_round_border sous-section">
+            <img src="www/images/compétences/problemSolver.png" alt="icon problemSolver">
+        </article>
+    </section>
+    <section id="realization">
+        <h1 class="Unselectable_text StyleHeaders">Realisations</h1>
+        <article id="Restaurant" class="white_background_round_border">
+            <h2 class="StyleHeaders Unselectable_text">Restaurant</h2>
+            <img src="www/images/realisation/realisation_Restaurant.png" alt="restaurant">
+            <div id="iconWrapper">
+                <a href="https://github.com/Yaci016/restaurant/tree/master/restaurant" target="_blank" title="restaurant backoffice frontoffice">
+                    <i class="fab fa-github fa-2x"></i>
+                </a>
+                <a href="/Restaurant" title="restaurant backoffice frontoffice">
+                    <i class="fas fa-folder-open fa-2x"></i>
+                </a>
+            </div>
+        </article>
+        <article id="Meta_site" class="white_background_round_border">
+            <h2 class="StyleHeaders Unselectable_text">Meta site</h2>
+            <img src="www/images/realisation/realisation_metaSite.png" alt="meta-site blog paint svg canvas">
+            <div id="iconWrapper">
+                <a href="https://github.com/Yaci016/Meta_Site" target="_blank" title="Check code on github">
+                    <i class="fab fa-github fa-2x"></i>
+                </a>
+                <a href="/MetaSite" title="Check Live version">
+                    <i class="fas fa-folder-open fa-2x"></i>
+                </a>
+            </div>
+        </article>
+    </section>
+    <script src="www\vendors\Jquery3.3.1\jquery.min.js"></script>
+    <script src="www/js/blurOtherElemsOnHover.js"></script>
+    <script src="www/js/smoothScroll.js"></script>
+    <script src="www/js/toTopButton.js"></script>
+    <script src="www/js/stickyHeader.js"></script>
+    <script src="www/js/main.js"></script>
+<?php
+$content = ob_get_clean();
+$title = 'Page d\'accueil';
+require 'www/view/layout.phtml';
+
+
+

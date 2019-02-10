@@ -1,0 +1,74 @@
+DirectoryIndex index.php
+RewriteEngine On
+
+RewriteRule ^home$ index.php?action=home [L]
+
+##Restaurant
+
+RewriteRule ^Restaurant$ www/Realization/restaurant/index.php?action=home [L]
+
+RewriteRule ^Restaurant/home$ www/Realization/restaurant/index.php?action=home [L]
+
+RewriteRule ^Restaurant/Admin/home$ www/Realization/restaurant/index.php?action=home [L]
+
+
+RewriteRule ^Restaurant/Inscription$ www/Realization/restaurant/index.php?action=SignUp [L]
+
+RewriteRule ^Restaurant/Deconexion$ www/Realization/restaurant/index.php?action=LogOff [L]
+
+RewriteRule ^Restaurant/Connexion$ www/Realization/restaurant/index.php?action=LogIn [L]
+
+RewriteRule ^Restaurant/MonCompte$ www/Realization/restaurant/index.php?action=Account [L]
+
+RewriteRule ^Restaurant/reservation$ www/Realization/restaurant/index.php?action=reservation [L]
+
+RewriteRule ^Restaurant/order$ www/Realization/restaurant/index.php?action=order [L]
+
+RewriteRule ^Restaurant/Erreur$ www/Realization/restaurant/index.php?action=error [L]
+
+RewriteRule ^Restaurant/Admin/Meal$ www/Realization/restaurant/index.php?action=Meals [L]
+
+RewriteRule ^Restaurant/Admin/Edition_Meal$ www/Realization/restaurant/index.php?action=EditMeal [L]
+
+RewriteRule ^Restaurant/Admin/Ajout_Meal$ www/Realization/restaurant/index.php?action=AddMeal [L]
+
+RewriteRule ^Restaurant/Admin/Reservation$ www/Realization/restaurant/index.php?action=AdministrationReservation [L]
+
+RewriteRule ^Restaurant/Admin/Commandes$ www/Realization/restaurant/index.php?action=EditCommande [L]
+
+RewriteRule ^Restaurant/Admin/Commandes/(.+)$ www/Realization/restaurant/index.php?action=EditCommande&idCommande=$1[L]
+## Meta_site
+
+RewriteRule ^MetaSite$ www/Realization/meta_site/index.php [L]
+
+RewriteRule ^MetaSite/Commentaires/(.+)$ www/Realization/meta_site/includes/Pages/Commentaires/commentaires\.php\?article=$1 [L]
+
+RewriteRule ^MetaSite/Ardoise_Magique$ www/Realization/meta_site/includes/Pages/Ardoise_Magique/Ardoise_Magique.php [L]
+
+RewriteRule ^MetaSite/Moteur_SVG$ www/Realization/meta_site/includes/Pages/Moteur_SVG/Moteur_SVG.php [L]
+
+RewriteRule ^MetaSite/administration$ www/Realization/meta_site/includes/Pages/administration/Accueil/administration.php [L]
+
+RewriteRule ^MetaSite/Creation/Article$ www/Realization/meta_site/includes/Pages/administration/Creation_article/Creation_article.php [L]
+
+RewriteRule ^MetaSite/Edition/Article$ www/Realization/meta_site/includes/Pages/administration/Edition_article/Edition_article.php [L]
+
+RewriteRule ^MetaSite/Creation/Categorie$ www/Realization/meta_site/includes/Pages/administration/Gestion_categorie/Ajout_categorie.php [L]
+
+RewriteRule ^MetaSite/Creation/Auteur$ www/Realization/meta_site/includes/Pages/administration/Gestion_Auteurs/Ajout_auteur.php [L]
+
+RewriteRule ^MetaSite/Moderation/Commentaire$ www/Realization/meta_site/includes/Pages/administration/Gestion_Commentaires/Moderation_Commentaire.php [L]
+
+RewriteRule ^MetaSite/Validation/Commentaires$ www/Realization/meta_site/includes/Pages/administration/Gestion_Commentaires/Validation_Commentaires.php [L]
+
+RewriteRule ^MetaSite/Inscription$ www/Realization/meta_site/includes/Pages/Espace_Membre/Inscription.php [L]
+
+RewriteRule ^MetaSite/Connexion$ www/Realization/meta_site/includes/Pages/Espace_Membre/Connexion.php [L]
+
+RewriteRule ^MetaSite/deconnexion$ www/Realization/meta_site/includes/Pages/Espace_Membre/deconnexion.php [L]
+
+
+
+
+#Catch 404 errors
+ErrorDocument 404 /index.php

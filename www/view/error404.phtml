@@ -1,0 +1,15 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: Yacine
+ * Date: 12/5/2018 0005
+ * Time: 5:41 AM
+ */
+ob_start();
+?>
+    <h2>Error 404</h2>
+    <p style="text-align:center;">The page you were looking for seems unreachable ! </p>
+<?php
+$content = ob_get_clean();
+$title = 'Error';
+require 'www/view/layout.phtml';

@@ -1,0 +1,64 @@
+<h3><i class="fas fa-book-open"></i>Article</h3>
+<section id="news">
+    <?php if ($La_new != null) { ?>
+    <h4><strong> <?= $titre ?> </strong></h4>
+    <p><?= $contenue ?></p>
+    Rédigé par <?php if ($nom_Auteur == null) {
+        echo '<strong>Auteur suprimé</strong>';
+    } else {
+        echo $nom_Auteur . ' ' . $Prenom_Auteur;
+    } ?> le <?= $date_ajout ?>
+</section>
+<hr>
+<section id="commentaires">
+    <div id="Validation"><p><strong>Votre commentaire a bien etait envoyé et est en attente de validation.</strong></p>
+    </div>
+    <h4><strong> Les commentaires : </strong></h4>
+    <div id="messages">
+        <?php
+        if ($Les_Commentaires != null) {
+            foreach ($Les_Commentaires as $donnees) {
+                $id = $donnees['id'];
+                $pseudo = $donnees['Pseudo'];
+                $contenue = $donnees['contenue'];
+                $date_ajout = $donnees['date_ajout'];
+                ?>
+
+                <p id="<?= $id ?>"><?= $contenue ?> Rédigé par <?= $pseudo ?> le <?= $date_ajout ?></p>
+            <?php }
+        } else { ?>
+            <p><strong>Pas de commentaire encore, soyez le premier a commenter ! </strong></p>
+        <?php } ?>
+    </div>
+
+</section>
+<hr>
+<form method="post">
+    <fieldset>
+        <legend><i class="far fa-comment"></i> Nouveau commentaire</legend>
+        <div class="clear"></div>
+        <table class="container">
+            <tr>
+                <td><label for="Pseudo">Pseudo: </label></td>
+                <td><input type="text" name="Pseudo"></td>
+            </tr>
+            <tr>
+                <td colspan="1"><label for="Commentaire">Commentaire: </label></td>
+                <td><textarea name="Commentaire" id="Commentaire" cols="30" rows="5"></textarea></td>
+            </tr>
+            <tr>
+                <td><p></p></td>
+                <td>
+                    <p>
+                        <button type="submit" id="Ajouter" name="valide" value="<?= $id_article ?>">Ajouter</button>
+                        <button type="reset" id="Annuler">Annuler</button>
+                    </p>
+                </td>
+            </tr>
+        </table>
+    </fieldset>
+</form>
+<script src="/www/Realization/meta_site/js/AddComment.js"></script>
+<?php } else {
+    echo '<h4><strong>Error 404 News not found</strong></h4>';
+} ?>

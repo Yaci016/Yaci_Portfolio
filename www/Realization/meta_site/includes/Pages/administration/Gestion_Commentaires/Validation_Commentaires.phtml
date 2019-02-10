@@ -1,0 +1,56 @@
+<h2>Panneau de moderation des commentaires</h2>
+<table id="tableau_administration" width="100%">
+    <tr>
+        <td><strong>id</strong></td>
+        <td><strong>Pseudo</strong></td>
+        <td><strong>Contenue</strong></td>
+        <td><strong>Date d'ajout</strong></td>
+        <td><strong>id_articles</strong></td>
+        <td><strong>validation</strong></td>
+    </tr>
+    <?php foreach ($Les_Commentaires as $comment) {
+        $id = $comment['id'];
+        $pseudo = $comment['Pseudo'];
+        $contenue = $comment['contenue'];
+        $date_ajout = $comment['date_ajout'];
+        $id_article = $comment['id_article'];
+        $state = $comment['Valide'];
+        ?>
+        <tr>
+            <td><?= $id ?></td>
+            <td><?= $pseudo ?></td>
+            <td>  <?= $contenue ?></td>
+            <td> <?= $date_ajout ?> </td>
+            <td> <?= $id_article ?> </td>
+            <td>
+                <form action="/MetaSite/Moderation/Commentaire" method="post">
+                    <?php if ($state !== 1) {
+                        echo "en attente de validation";
+                    } else {
+                        echo 'valide';
+                    } ?>
+                    <button class="bouton_edition" name="validate" value="<?= $id ?>"><i class="fas fa-check"></i>
+                    </button>
+                </form>
+            </td>
+            <?php /* <td>
+                <form action="Moderation_Commentaire.php" method="post">
+                    <input  name="titre" type="hidden" value="<?= $pseudo?>">
+                    <input  name="contenue" type="hidden" value="<?= $contenue?>">
+                    <input  name="date" type="hidden" value="<?=$date_ajout ?>">
+                    <input  name="id_article" type="hidden" value="<?=$id_article ?>">
+                    <input name="state" type="hidden" value value="<?= $state ?>">
+                    <button name="edit" value="<?= $id ?>" class="bouton_edition"><i class="fas fa-pen"></i></button>
+                </form>
+            </td> */ ?>
+            <td>
+                <form action="/MetaSite/Moderation/Commentaire" method="post">
+                    <button class="bouton_edition" name="delete" value="<?= $id ?>"><i class="fas fa-times"></i>
+                    </button>
+                </form>
+            </td>
+        </tr>
+    <?php } ?>
+</table>
+<a href="/MetaSite/Moderation/Commentaire" style="float:right;">Retourner a la moderation des commentaires</a>
+<div class="clear"></div>

@@ -1,0 +1,305 @@
+/* general css  for the application*/
+/* css for fonts */
+/* latin */
+@font-face {
+    font-family: 'Crimson Text';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Crimson Text Regular'), local('CrimsonText-Regular'), url(../vendors/fonts/Crimson_Text.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Work Sans'), local('WorkSans-Regular'), url(../vendors/fonts/WorkSans-Regular-ext.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Work Sans'), local('WorkSans-Regular'), url(../vendors/fonts/WorkSans-Regular.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Work Sans Bold'), local('WorkSans-Bold'), url(../vendors/fonts/WorkSans-Bold-ext.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Work Sans Bold'), local('WorkSans-Bold'), url(../vendors/fonts/WorkSans-Bold.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+* {
+    box-sizing: border-box;
+}
+html {
+    font-size: 62.5%;
+}
+body {
+    background: url("../images/background-big.jpg");
+    font-size: 1.5em;
+    font-family: 'Work Sans', sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+ font-family: 'Crimson Text', serif;
+}
+/* css for in devlopment banner*/
+#banner {
+background: red;
+font-weight: bold;
+font-size:22px;
+font-style:italic;
+text-align:center;
+}
+.hidden {
+    opacity: 0;
+}
+.StyleHeaders {
+    font-weight: bolder;
+    border-top: black double 1rem;
+    border-bottom: black double 1rem;
+    text-align: center;
+    text-decoration-style: solid;
+    background: rgb(255, 255, 255)
+}
+.Unselectable_text {
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+}
+.white_background_round_border {
+    background: rgba(255, 255, 255, 0.34);
+    padding: 1%;
+    margin: 1%;
+    box-shadow: 0 0 10px 4px rgba(0,0,0,0.2);
+    transition: all 0.5s ease-in-out;
+}
+.white_background_round_border:hover {
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.61);
+    border: 1px double black;
+    box-shadow: 0 0 40px 40px rgba(0,0,0,0.05);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+    z-index: 2;
+}
+
+.sous-section {
+    flex-basis:10% !important;
+}
+.sous-section img {
+    width: 10rem !important;
+    height: 10rem !important;
+}
+/* css for the header/footer*/
+header, footer {
+    background: rgba(191, 191, 191, 0.33);
+}
+
+/* css for the header content */
+.Sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 3;
+}
+
+#Main_Navigation_bar {
+    display: flex;
+    justify-content: space-around;
+}
+
+header a {
+    text-align: center;
+    flex-basis:33.33%;
+    text-decoration: none;
+    padding: 1%;
+    margin:0;
+    font-weight: bold;
+    color:white;
+    transition: all 1s;
+    background: rgba(0,0,0,0.5);
+}
+
+header a:hover {
+    background: white;
+    font-weight: bolder;
+    color:black;
+}
+
+/* css for the footer content */
+footer {
+    font-family: 'Yellowtail', cursive;
+    font-weight: bolder;
+    font-size: 2em;
+    text-align: center;
+    padding: 1%;
+}
+/* css for the main */
+main {
+    max-width: 1100px;
+    margin: auto;
+}
+section h1 {
+    flex-basis:100%;
+}
+/* Css for the first section description */
+#about {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+#about * {
+    margin: 1%;
+}
+
+#about img {
+
+    width: 20rem;
+    height: auto;
+    border-radius: 50%;
+}
+
+#wrapper_Identifiant {
+    margin: 0 auto;
+    white-space: nowrap;
+    width: fit-content;
+    background: rgba(255, 255, 255, 0.34);
+    padding: 1%;
+     box-shadow: 0 0 5px 5px rgba(0,0,0,0.5);
+}
+
+#description_wrapper {
+    vertical-align: top;
+    padding: 2%;
+    text-align: center;
+}
+#Citation_Personelle {
+    font-size:0.8em;
+    margin-top: 2rem;
+}
+.button_CV {
+    border-radius: 5px;
+    background: rgba(0, 0, 0, 0.34);
+    padding: 1%;
+    margin: 1%;
+    box-shadow: 0 0 10px 4px rgba(0,0,0,0.2);
+    text-decoration: none;
+    color:white;
+    font-weight: bold;
+    transition: all 0.5s;
+}
+.button_CV:hover {
+    border-radius: 0;
+    border: 1px solid black;
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+    z-index: 2;
+}
+/* Css for the second section competencies */
+#competencies {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+/* css for third section realization */
+#realization {
+display:flex;
+flex-wrap: wrap;
+justify-content: space-around;
+margin-bottom: 1.5em;
+}
+#realization article {
+    padding: 0;
+}
+#realization article .StyleHeaders{
+    border-radius: 0;
+}
+#realization article:nth-child(2) .StyleHeaders {
+    background: rgba(255, 0, 3, 0.73);
+}
+#realization article:nth-child(3) .StyleHeaders {
+    background: rgba(255, 162, 0, 0.73);
+}
+#iconWrapper{
+    display:flex;
+    justify-content: space-around;
+    color:black;
+}
+#iconWrapper a {
+    text-decoration: none;
+    color:black;
+    margin-bottom:1rem;
+}
+/* css for second and third sections*/
+
+#competencies article,#realization article {
+    flex-basis: 30%;
+    text-align: center;
+}
+#competencies img {
+    width: 125px;
+    height: 200px;
+}
+@media only screen and (max-width: 400px) {
+    h1 {
+        text-align: center;
+    }
+    #about {
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    #Paragraphe_Description {
+        text-align: left;
+    }
+  }
+
+/*css for scroll to top button*/
+#scroll {
+    position:fixed;
+    right:10px;
+    bottom:10px;
+    cursor:pointer;
+    width:50px;
+    height:50px;
+    background-color:#7397852f;
+    text-indent:-9999px;
+    display:none;
+    -webkit-border-radius:60px;
+    -moz-border-radius:60px;
+    border-radius:60px;
+    transition: all 0.5s ease-in-out;
+}
+#scroll span {
+    position:absolute;
+    top:50%;
+    left:50%;
+    margin-left:-8px;
+    margin-top:-12px;
+    height:0;
+    width:0;
+    border:8px solid transparent;
+    border-bottom-color:#ffffff;
+    transition: all 0.5s ease-in-out;
+}
+#scroll:hover {
+    background-color:#f7f7f72f;
+    opacity:1;filter:"alpha(opacity=100)";
+    -ms-filter:"alpha(opacity=100)";
+}
+#scroll:hover span {
+     border-bottom-color:#000000;
+ }
