@@ -1,0 +1,52 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: Yaci
+ * Date: 21/10/2018
+ * Time: 16:32
+ */ ?>
+<h2>Ajouter nouvel auteur</h2>
+<form action="/MetaSite/administration" method="post">
+    <fieldset>
+        <legend><i class="far fa-comment"></i> Nouvel Auteur</legend>
+        <div class="clear"></div>
+        <table class="container">
+            <tr>
+                <td><label for="Nom">Nom: </label></td>
+                <td><input type="text" name="Nom"></td>
+            </tr>
+            <tr>
+                <td><label for="Prenom">Prenom: </label></td>
+                <td><input type="text" name="Prenom"></td>
+            </tr>
+            <tr>
+                <td><p></p></td>
+                <td>
+                    <p>
+                        <button type="submit" id="Ajouter" name="AjoutAuteur" value="valide">Ajouter</button>
+                        <button type="reset" id="Annuler">Annuler</button>
+                    </p>
+                </td>
+            </tr>
+        </table>
+<?php if ($Auteurs != [] ) { ?>
+        <form action="/MetaSite/administration.php" method="post">
+            <fieldset>
+                <legend><i class="far fa-comment"></i> Retirer un auteur !</legend>
+                <div class="clear"></div>
+                <tr>
+                    <td>
+                        <p style="color:black;">Suprimer cette auteur :
+                        <select name="Auteur">
+                            <?php foreach ($Auteurs as $auteur) { ?>
+                                <option value="<?= $auteur['id'] ?>"><?= $auteur['Nom'] . ' ' . $auteur['Prenom'] ?></option>
+                            <?php } ?>
+                        </select>
+                                <button class="bouton_edition" name="deleteAuthor" value="<?= $auteur['id'] ?>" ><i class="fas fa-times"></i></button>
+                        </p>
+                    </td>
+                </tr>
+                </table>
+            </fieldset>
+        </form>
+<?php } ?>

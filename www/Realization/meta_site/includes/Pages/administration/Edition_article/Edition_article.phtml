@@ -1,0 +1,79 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: wali7
+ * Date: 19/10/18
+ * Time: 13:50
+ */ ?>
+
+<h2>editer article</h2>
+<form action="/MetaSite/administration" method="post">
+    <fieldset>
+        <legend><i class="far fa-comment"></i> Edition de news </legend>
+        <div class="clear"></div>
+        <table class="container">
+            <tr>
+                <td><label for="Titre">Titre: </label></td>
+                <td><input type="text" name="Titre" value="<?= $titre_A_Edit ?>"></td>
+            </tr>
+            <tr>
+                <td colspan="1"><label for="Article">Article: </label></td>
+                <td><textarea name="Article" cols="30" rows="10"
+                              value="<?= $contenue_A_Edit ?>"><?= $contenue_A_Edit ?></textarea></td>
+            </tr>
+            <tr>
+                <td colspan="1">
+                    <label for="Auteur">Auteur: </label>
+                </td>
+                <td>
+                    <select name="Auteur">
+                        <?php foreach ($Auteurs as $auteur) {
+                            $nomPrenomAuteur = $auteur['Nom'] . ' ' . $auteur['Prenom'];
+                            if ($nomPrenomAuteur == $auteur_A_Edit) { ?>
+                                <option value="<?= $auteur['id'] ?>" selected><?= $nomPrenomAuteur ?></option>
+                            <?php } else { ?>
+                                <option value="<?= $auteur['id'] ?>"><?= $auteur['Nom'] . ' ' . $auteur['Prenom'] ?></option>
+                            <?php }
+                        } ?>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="1">
+                    <label for="Categorie">Categorie: </label>
+                </td>
+                <td>
+                    <select name="Categorie">
+                        <?php foreach ($Categories as $Categorie) {
+
+                            if ($Categorie['Nom_De_Categorie'] == $categorie_A_Edit) {
+                                ?>
+
+                                <option value="<?= $Categorie['id'] ?>"
+                                        selected><?= $Categorie['Nom_De_Categorie'] ?></option>
+
+                            <?php } else { ?>
+
+                                <option value="<?= $Categorie['id'] ?>"><?= $Categorie['Nom_De_Categorie'] ?></option>
+
+                            <?php }
+                        } ?>
+
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><p></p></td>
+                <td>
+                    <p>
+                        <button type="submit" id="Editer" name="edit" value="<?= $_POST['edit'] ?>">Editer</button>
+                        <button type="reset" id="Annuler">Annuler</button>
+                    </p>
+                </td>
+            </tr>
+
+        </table>
+
+
+    </fieldset>
+</form>

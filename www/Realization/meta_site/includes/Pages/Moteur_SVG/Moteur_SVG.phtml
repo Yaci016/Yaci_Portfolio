@@ -1,0 +1,62 @@
+<link rel="stylesheet" type="text/css" href="/www/Realization/meta_site/css/Moteur_svg.css">
+
+<article id="form">
+        <form method="post">
+            <p>
+                <label for="forme">La forme que vous souhaitez ajouter au svg :
+                    <select name="forme" id="forme">
+                        <option value="Care">Carré</option>
+                        <option value="rectangle">rectangle</option>
+                        <option value="Elipse">Elipse</option>
+                        <option value="Cercle">Cercle</option>
+                        <option value="triangle">triangle</option>
+                    </select>
+                </label>
+            </p>
+            <div id="informationForme">
+                <p>
+                    <label for="opacity">choisisez l'opacité de votre carée (rentrer un nombre a vergule entre 0 et 1) :
+                        <input type="number" name="opacity" min="0" max="1" step="0.01">
+                    </label>
+                </p>
+
+                <p>
+                    <label for="posX">choisisez la position x de votre carée :
+                        <input type="number" name="posX">
+                    </label>
+                </p>
+
+                <p>
+                    <label for="posY">choisisez la position y de votre carée :
+                        <input type="number" name="posY">
+                    </label>
+                </p>
+
+                <p>
+                    <label for="color">choisisez la couleur de votre carée :
+                        <input type="text" name="color">
+                    </label>
+                </p>
+
+                <p>
+                    <label for="cote">choisisez la taille du cote de votre carée:
+                        <input type="number" name="cote">
+                    </label>
+                </p>
+
+                <input type="hidden" name="FormePJs" value="Care">
+
+                <input type="submit" name="valide" value="valide">
+                <form method="post">
+                    <button name="reset" value="reset">Reset</button>
+                </form>
+
+            </div>
+
+        </form>
+    </article>
+
+    <svg width="500" height="500">
+        <?php $index->run(); ?>
+    </svg>
+ <script src="/www/Realization/meta_site/js/Moteur_SVG/js/main.js"></script>
