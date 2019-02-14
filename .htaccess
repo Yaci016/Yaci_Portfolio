@@ -3,6 +3,9 @@ RewriteEngine On
 
 RewriteRule ^home$ index.php?action=home [L]
 
+RewriteRule ^contact$ index.php?action=contact [L]
+
+
 ##Restaurant
 
 RewriteRule ^Restaurant$ www/Realization/restaurant/index.php?action=home [L]
@@ -41,6 +44,8 @@ RewriteRule ^Restaurant/Admin/Commandes/(.+)$ www/Realization/restaurant/index.p
 
 RewriteRule ^MetaSite$ www/Realization/meta_site/index.php [L]
 
+RewriteRule ^MetaSite/home$ www/Realization/meta_site/index.php [L]
+
 RewriteRule ^MetaSite/Commentaires/(.+)$ www/Realization/meta_site/includes/Pages/Commentaires/commentaires\.php\?article=$1 [L]
 
 RewriteRule ^MetaSite/Ardoise_Magique$ www/Realization/meta_site/includes/Pages/Ardoise_Magique/Ardoise_Magique.php [L]
@@ -72,3 +77,100 @@ RewriteRule ^MetaSite/deconnexion$ www/Realization/meta_site/includes/Pages/Espa
 
 #Catch 404 errors
 ErrorDocument 404 /index.php
+
+	# Enable expiration control
+	ExpiresActive On
+
+	# Default expiration: 1 hour after request
+	ExpiresDefault "now plus 1 hour"
+
+	# CSS and JS expiration: 1 week after request
+	ExpiresByType text/css "now plus 1 week"
+	ExpiresByType application/javascript "now plus 1 week"
+	ExpiresByType application/x-javascript "now plus 1 week"
+
+	# Image files expiration: 1 month after request
+	ExpiresByType image/bmp "now plus 1 month"
+	ExpiresByType image/gif "now plus 1 month"
+	ExpiresByType image/jpeg "now plus 1 month"
+	ExpiresByType image/jp2 "now plus 1 month"
+	ExpiresByType image/pipeg "now plus 1 month"
+	ExpiresByType image/png "now plus 1 month"
+	ExpiresByType image/svg+xml "now plus 1 month"
+	ExpiresByType image/tiff "now plus 1 month"
+	ExpiresByType image/vnd.microsoft.icon "now plus 1 month"
+	ExpiresByType image/x-icon "now plus 1 month"
+	ExpiresByType image/ico "now plus 1 month"
+	ExpiresByType image/icon "now plus 1 month"
+	ExpiresByType text/ico "now plus 1 month"
+	ExpiresByType application/ico "now plus 1 month"
+	ExpiresByType image/vnd.wap.wbmp "now plus 1 month"
+	ExpiresByType application/vnd.wap.wbxml "now plus 1 month"
+	ExpiresByType application/smil "now plus 1 month"
+
+	# Audio files expiration: 1 month after request
+	ExpiresByType audio/basic "now plus 1 month"
+	ExpiresByType audio/mid "now plus 1 month"
+	ExpiresByType audio/midi "now plus 1 month"
+	ExpiresByType audio/mpeg "now plus 1 month"
+	ExpiresByType audio/x-aiff "now plus 1 month"
+	ExpiresByType audio/x-mpegurl "now plus 1 month"
+	ExpiresByType audio/x-pn-realaudio "now plus 1 month"
+	ExpiresByType audio/x-wav "now plus 1 month"
+
+	# Movie files expiration: 1 month after request
+	ExpiresByType application/x-shockwave-flash "now plus 1 month"
+	ExpiresByType x-world/x-vrml "now plus 1 month"
+	ExpiresByType video/x-msvideo "now plus 1 month"
+	ExpiresByType video/mpeg "now plus 1 month"
+	ExpiresByType video/mp4 "now plus 1 month"
+	ExpiresByType video/quicktime "now plus 1 month"
+	ExpiresByType video/x-la-asf "now plus 1 month"
+	ExpiresByType video/x-ms-asf "now plus 1 month"
+
+########## End - Optimal expiration time
+
+# MOD_DEFLATE COMPRESSION
+SetOutputFilter DEFLATE
+AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml application/x-javascript application/x-httpd-php
+#Pour les navigateurs incompatibles
+BrowserMatch ^Mozilla/4 gzip-only-text/html
+BrowserMatch ^Mozilla/4\.0[678] no-gzip
+BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
+BrowserMatch \bMSI[E] !no-gzip !gzip-only-text/html
+#ne pas mettre en cache si ces fichiers le sont d�j�
+SetEnvIfNoCase Request_URI \.(?:gif|jpe?g|png)$ no-gzip
+#les proxies doivent donner le bon contenu
+Header append Vary User-Agent env=!dont-vary
+# BEGIN Cache-Control Headers
+<IfModule mod_headers.c>
+ <FilesMatch "\.(ico|jpe?g|png|gif|swf|css|gz)$">
+ Header set Cache-Control "max-age=2592000, public"
+ </FilesMatch>
+ <FilesMatch "\.(js)$">
+ Header set Cache-Control "max-age=2592000, private"
+ </FilesMatch>
+<filesMatch "\.(html|htm)$">
+Header set Cache-Control "max-age=7200, public"
+</filesMatch>
+</IfModule>
+# END Cache-Control Headers
+Header unset ETag
+FileETag none
+# protect the htaccess file
+<files .htaccess>
+order allow,deny
+deny from all
+</files>
+# protection de la lecture des r�pertoires
+ Options -Indexes
+<ifModule mod_headers.c>
+    Header set Connection keep-alive
+Header set Content-Security-Policy "script-src 'self' https://www.google.com https://ajax.googleapis.com"
+</ifModule>
+<FilesMatch "\.(gif�jpe?g�png�ico�css�js�swf)$">
+Header set Cache-Control "public"
+</FilesMatch>
+
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^(.*)$ https://www.yaci.fr/$1 [R=301,L]
