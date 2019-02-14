@@ -62,9 +62,6 @@ font-size:22px;
 font-style:italic;
 text-align:center;
 }
-.hidden {
-    opacity: 0;
-}
 .StyleHeaders {
     font-weight: bolder;
     border-top: black double 1rem;
@@ -138,7 +135,11 @@ header a:hover {
     font-weight: bolder;
     color:black;
 }
-
+.hover { /* class to use in js*/
+    background: white;
+    font-weight: bolder;
+    color:black;
+}
 /* css for the footer content */
 footer {
     font-family: 'Yellowtail', cursive;
@@ -155,6 +156,15 @@ main {
 section h1 {
     flex-basis:100%;
 }
+/* css for div message info*/
+#message_info {
+    background: black;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    padding: 3px;
+    display: none;
+}
 /* Css for the first section description */
 #about {
     display: flex;
@@ -167,7 +177,6 @@ section h1 {
 }
 
 #about img {
-
     width: 20rem;
     height: auto;
     border-radius: 50%;
@@ -225,7 +234,7 @@ margin-bottom: 1.5em;
 #realization article {
     padding: 0;
 }
-#realization article .StyleHeaders{
+article  .StyleHeaders{
     border-radius: 0;
 }
 #realization article:nth-child(2) .StyleHeaders {
@@ -265,8 +274,117 @@ margin-bottom: 1.5em;
     #Paragraphe_Description {
         text-align: left;
     }
+     #infos_contact p{
+        margin-left: 5%;
+    }
   }
+/* css for fourth section */
+#contact {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+#contact h1 {
+    flex-basis: 100%;
+}
 
+#contact > article{
+    padding-left: 0;
+    padding-right: 0;
+    text-indent: 1%;
+    flex-basis: 100%;
+}
+#contact form {
+    margin-left: 5%;
+}
+#contact label {
+    font-weight: bold;
+}
+#contact  h2 {
+    border-color:white ;
+    background: black;
+    color: #FFFFFF;
+}
+#contact input[type=text], #contact select, #contact textarea {
+    width: 90%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+
+#contact input[type=submit] {
+    background-color: #000000;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+    transition: all 700ms ease-out;
+}
+#btn_wrapper {
+    width: 100%;
+    text-align: center;
+}
+#contact input[type=submit]:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* css for font awesome icons*/
+.fa-3x {
+
+    border: none;
+    transition: all 700ms ease-in-out;
+}
+.fa-github:hover {
+    color: white;
+    background: #5d6a75;
+}
+.fa-phone:hover {
+    color: #2b9916;
+}
+.fa-at:hover {
+    color:whitesmoke;
+}
+.fa-linkedin:hover {
+    color:#0077B5;
+}
+.fa-free-code-camp:hover {
+    color:white;
+    background: #006400;
+}
+
+/* animations */
+@keyframes leftToRight {
+    from {
+        transform: translate(-100%, -100%) scale(.7,.7);
+        opacity: 0;
+    }
+    to {
+        transform: translate(0, 0%);
+        opacity: 1;
+    }
+}
+.left-to-right {
+    animation: leftToRight 2.6s;
+}
+@keyframes rightToLeft {
+    from {
+        transform: translate(100%, 100%) scale(.7,.7);
+        opacity: 0;
+    }
+    to {
+        transform: translate(0, 0%);
+        opacity: 1;
+    }
+}
+.right-to-left {
+    animation: rightToLeft 2.6s;
+}
+.hidden {
+    opacity: 0;
+}
 /*css for scroll to top button*/
 #scroll {
     position:fixed;

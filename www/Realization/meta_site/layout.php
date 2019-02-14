@@ -17,17 +17,17 @@ if (!(isset($_SESSION))) {
     <title><?= $pagetitle ?></title>
     <link rel="stylesheet" type="text/css" href="/www/Realization/meta_site/css/normalize.css">
     <link rel="stylesheet" type="text/css" href="/www/Realization/meta_site/css/style.css">
-    <link rel="stylesheet" type="text/css" href="/www/Realization/meta_site/css/GoHome.css">
+    <link rel="stylesheet" href="/www/Realization/meta_site/css/GoHome.css">
     <script  src="/www/Realization/meta_site/js/main.js"></script>
 
 </head>
 <body>
-<a href="/home" id="home">
+<a href="../../../index.php" id="home">
     <i class="fas fa-home"></i>
 </a>
 <header>
     <div class="topnav">
-        <a class="active" href="/MetaSite">Home</a>
+        <a class="active" href="MetaSite/home">Home</a>
         <a href="/MetaSite/Ardoise_Magique">Dessin canvas</a>
         <a href="/MetaSite/Moteur_SVG">Dessin SVG</a>
         <?php if (isset($_SESSION['droit'])) { ?>
@@ -65,7 +65,7 @@ if (!(isset($_SESSION))) {
     </div>
 
 
-    <h1><a href="/MetaSite"><i class="fas fa-microphone"></i> MetaSite :  Blog / canvas / svg paint  </a></h1>
+    <h1><a href="/MetaSite/home"><i class="fas fa-microphone"></i>  canvas / svg paint  </a></h1>
 
 
 </header>

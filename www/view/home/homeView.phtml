@@ -1,6 +1,20 @@
 <?php ob_start(); ?>
- <h1 class="Unselectable_text StyleHeaders">Presentation</h1>
-<section id="about" class="Unselectable_text">
+    <div id="message_info">
+        <?php
+        $message_info =   $_SESSION["Email"];
+        if (isset($message_info) && $message_info === true) {
+            echo '<p>Votre prise de contact est reussi.</p>';
+            echo '<script src="www//js/afficherMessageInfo.js"></script>';
+        } elseif(isset($message_info) && $message_info === false) {
+            echo '<p>Votre prise de contact a echoué. Verifié que vous avez bien remplie tout les champs.</p>';
+            echo '<script src="/www/js/afficherMessageInfo.js"></script>';
+        }
+        $message_info = null;
+        unset($_SESSION["Email"]);
+        ?>
+    </div>
+    <h1 class="Unselectable_text StyleHeaders">Presentation</h1>
+    <section id="about" class="Unselectable_text">
         <article class="white_background_round_border">
             <img src="www/images/Image_description.jpg" alt="Yaci">
         </article>
@@ -13,15 +27,18 @@
 
             <h4 id="Bienvenue">Bonjour et bienvenue sur mon portfolio. </h4>
 
-            <p id="Paragraphe_Description">Je suis Yacine, j'ai 21 ans, et ma passion pour le développement web a débuté très tôt. Via Openclassooms, Code Academy, Medium ou des poadcats, j'ai voulu acquérir une base solide avant de rejoindre la 3W Academy. Je suis d'ailleurs en cours d'auto apprentissage sur ReactJS.
-</p>
+            <p id="Paragraphe_Description">Je suis Yacine, j'ai 21 ans, et ma passion pour le développement web a débuté
+                très tôt. Via Openclassooms, Code Academy, Medium ou des poadcats, j'ai voulu acquérir une base solide
+                avant de rejoindre la 3W Academy. Je suis d'ailleurs en cours d'auto apprentissage sur ReactJS.
+            </p>
 
-            <p id="Citation_Personelle"><q><strong>Soif de connaissance, je ne cesse d’apprendre chaque jour de nouveau concepts dans le vaste monde du numerique.</strong></q></p>
+            <p id="Citation_Personelle"><q><strong>Soif de connaissance, je ne cesse d’apprendre chaque jour de nouveau
+                        concepts dans le vaste monde du numerique.</strong></q></p>
             <a href="www/pdf/Yacine_DevWeb.pdf" title="CV" class="button_CV">CV</a>
         </article>
     </section>
-    <section id="competencies">
-       <h1 class="Unselectable_text StyleHeaders">Compétences</h1>
+    <section id="competencies" >
+        <h1 class="Unselectable_text StyleHeaders">Compétences</h1>
         <article id="html5" class=" white_background_round_border  sous-section">
             <img src="www/images/compétences/html5.jpg" alt="icon html5 html">
         </article>
@@ -37,19 +54,19 @@
         <article id="MySQL" class=" white_background_round_border sous-section">
             <img src="www/images/compétences/MySQL.png" alt="icon MySQL">
         </article>
-         <article id="WordPress" class=" white_background_round_border sous-section">
+        <article id="WordPress" class=" white_background_round_border sous-section">
             <img src="www/images/compétences/WordPress.png" alt="icon wordPress cms">
         </article>
         <article id="bootstrap" class=" white_background_round_border  sous-section">
             <img src="www/images/compétences/bootstrap.png" alt="icon bootstrap css">
         </article>
-         <article id="Sass" class=" white_background_round_border sous-section">
+        <article id="Sass" class=" white_background_round_border sous-section">
             <img src="www/images/compétences/sass.png" alt="icon sass">
         </article>
-         <article id="jquery" class=" white_background_round_border sous-section">
+        <article id="jquery" class=" white_background_round_border sous-section">
             <img src="www/images/compétences/jquery.gif" alt="icon jquery">
         </article>
-         <article id="ajax" class=" white_background_round_border sous-section">
+        <article id="ajax" class=" white_background_round_border sous-section">
             <img src="www/images/compétences/AJAX.png" alt="icon ajax">
         </article>
         <article id="git" class=" white_background_round_border sous-section">
@@ -59,13 +76,14 @@
             <img src="www/images/compétences/problemSolver.png" alt="icon problemSolver">
         </article>
     </section>
-    <section id="realization">
+    <section id="realization" >
         <h1 class="Unselectable_text StyleHeaders">Realisations</h1>
         <article id="Restaurant" class="white_background_round_border">
             <h2 class="StyleHeaders Unselectable_text">Restaurant</h2>
             <img src="www/images/realisation/realisation_Restaurant.png" alt="restaurant">
             <div id="iconWrapper">
-                <a href="https://github.com/Yaci016/restaurant/tree/master/restaurant" target="_blank" title="restaurant backoffice frontoffice">
+                <a href="https://github.com/Yaci016/restaurant/tree/master/restaurant" target="_blank"
+                   title="restaurant backoffice frontoffice">
                     <i class="fab fa-github fa-2x"></i>
                 </a>
                 <a href="/Restaurant" title="restaurant backoffice frontoffice">
@@ -86,12 +104,53 @@
             </div>
         </article>
     </section>
+    <section id="contact" >
+        <h1 class="Unselectable_text StyleHeaders">Contact</h1>
+        <article class="white_background_round_border" id="infos_contact">
+            <h2 class="Unselectable_text StyleHeaders">Me contacter</h2>
+            <p><strong>Si vous avez une offre ou un projet qui puisse m'interessé n'hesité pas a me contacter ! </strong></p>
+            <p><strong>Je reviendrais vers vous dans les plus bref delais.</strong></p>
+            <div id="iconWrapper">
+                <a href="https://github.com/Yaci016" target="_blank" title="Check my github">
+                    <i class="fab fa-github fa-3x"></i>
+                </a>
+                <a href="https://www.freecodecamp.org/yaci016" target="_blank" title="Check my FreeCodeCamp">
+                    <i class="fab fa-free-code-camp fa-3x"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/yaci016/" target="_blank" title="Check my linkedin">
+                    <i class="fab fa-linkedin fa-3x"></i>
+                </a>
+                <a href="mailto:yacinekherbache@yaci.fr" target="_top" title="mail me ">
+                    <i class="fas fa-at fa-3x"></i>
+                </a>
+                <a href="tel:+3317421138" target="_top" title="Call me">
+                    <i class="fas fa-phone fa-3x"></i>
+                </a>
+            </div>
+            <h2 class="Unselectable_text StyleHeaders">Formulaire de contact</h2>
+            <form action="/contact" method="POST">
+                <p>
+                    <label for="Nom">Nom :</label><br />
+                    <input type="text" id="Nom" name="Nom"  placeholder="Votre nom..." maxlength="60"></p>
+                <p>
+                    <label for="Objet">Objet : </label><br />
+                    <input type="text" id="Objet" name="Objet" placeholder="Objet de votre prise de contact" maxlength="120"></p>
+                <p>
+                    <label for="Message">Message : </label><br />
+                    <textarea id="Message" name="Message" placeholder="Ecrivez votre message ici..."></textarea>
+                <div id="btn_wrapper"><input type="submit" value="Submit"></div>
+                </p>
+            </form>
+        </article>
+    </section>
     <script src="www\vendors\Jquery3.3.1\jquery.min.js"></script>
+    <script src="www/js/main.js"></script>
     <script src="www/js/blurOtherElemsOnHover.js"></script>
     <script src="www/js/smoothScroll.js"></script>
     <script src="www/js/toTopButton.js"></script>
     <script src="www/js/stickyHeader.js"></script>
-    <script src="www/js/main.js"></script>
+    <!--<script src="www/js/animationOnScroll.js"></script>-->
+
 <?php
 $content = ob_get_clean();
 $title = 'Page d\'accueil';

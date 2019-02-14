@@ -10,6 +10,14 @@ if (isset($_GET['action'])) {
         case 'home' : //page d'accueil
             home();
             break;
+        case 'contact':
+            if ($_POST['Nom'] != ''  &&  $_POST['Objet'] != '' && $_POST['Message'] != '') {
+                contact($_POST);
+            } else {
+                $_SESSION["Email"] = false;
+                header('location:/home');
+            }
+            break;
         case 'error':
             error();
             break;
