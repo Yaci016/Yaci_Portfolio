@@ -1,0 +1,53 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: Yaci
+ * Date: 21/10/2018
+ * Time: 16:33
+ */
+?>
+    <h2>Ajouter nouvel Categorie</h2>
+    <form action="/MetaSite/administration" method="post">
+    <fieldset>
+    <legend><i class="far fa-comment"></i> Nouvel categorie</legend>
+    <div class="clear"></div>
+    <table class="container">
+        <tr>
+            <td><label for="NomCategorie">Nom de categorie: </label></td>
+            <td><input type="text" name="NomCategorie"></td>
+        </tr>
+        <tr>
+            <td><p></p></td>
+            <td>
+                <p>
+                    <button type="submit" id="Ajouter" name="AjoutCategorie" value="valide">Ajouter</button>
+                    <button type="reset" id="Annuler">Annuler</button>
+                </p>
+            </td>
+        </tr>
+    </table>
+<?php if ($Categories != []) { ?>
+    <form action="/MetaSite//administration.php" method="post">
+        <fieldset>
+            <legend><i class="far fa-comment"></i> Retirer une categorie !</legend>
+            <div class="clear"></div>
+            <tr>
+                <td>
+                    <p style="color:black;">Suprimer cette categorie :
+                        <select name="Categorie">
+                            <?php foreach ($Categories as $Categorie) { ?>
+                                <option value="<?= $Categorie['id'] ?>"><?= $Categorie['Nom_De_Categorie'] ?></option>
+                            <?php } ?>
+                        </select>
+                        <button class="bouton_edition" name="deleteCategorie" value="<?= $Categorie['id'] ?>"><i
+                                    class="fas fa-times"></i></button>
+                    </p>
+                </td>
+            </tr>
+            </table>
+        </fieldset>
+    </form>
+
+    </fieldset>
+    </form>
+<?php } ?>

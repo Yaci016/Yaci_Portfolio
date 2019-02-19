@@ -1,0 +1,42 @@
+<?php ob_start(); ?>
+    <section class="white_background_round_border">
+        <h1 class="Unselectable_text StyleHeaders">Diplomes</h1>
+        <p>Diffèrent diplômes obtenue à la fin des cours avec activités sur openclassrooms.</p>
+    </section>
+
+    <!-- Place somewhere in the <body> of your page -->
+    <section class="flexslider">
+        <ul class="slides">
+            <li>
+                <img src="www/images/Diplomes/javascript_1.jpg" alt="diplomes kherbache yacine" />
+            </li>
+            <li>
+                <img src="www/images/Diplomes/javascript_2.jpg" alt="diplomes kherbache yacine"/>
+            </li>
+            <li>
+                <img src="www/images/Diplomes/html5_css3.jpg"alt="diplomes kherbache yacine" />
+            </li>
+            <li>
+                <img src="www/images/Diplomes/MVC.jpg" alt="diplomes kherbache yacine"/>
+            </li>
+            <li>
+                <img src="www/images/Diplomes/nodeJs.jpg" alt="diplomes kherbache yacine"/>
+            </li>
+            <li>
+                <img src="www/images/Diplomes/php_mySQL.jpg" alt="diplomes kherbache yacine"/>
+            </li>
+            <li>
+                <img src="www/images/Diplomes/soft_skill.jpg" alt="diplomes kherbache yacine"/>
+            </li>
+        </ul>
+    </section>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+    <script src="www/vendors/flexslider/jquery.flexslider-min.js"></script>
+    <!-- Place in the <head>, after the three links -->
+    <script src="www/js/FlexSlider.js"></script>
+
+<?php
+$content = ob_get_clean();
+$title = 'Portfolio - Diplomes';
+require 'www/view/layout.phtml';

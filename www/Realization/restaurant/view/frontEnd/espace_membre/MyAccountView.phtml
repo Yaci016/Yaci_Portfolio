@@ -1,0 +1,43 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: Yacine
+ * Date: 11/13/2018 0013
+ * Time: 12:05 AM
+ */
+ob_start(); ?>
+    <main>
+        <h2>Mon compte</h2>
+        <form action="/Restaurant/MonCompte" method="post">
+            <fieldset id="My_account_infos">
+            <legend>Mes informations</legend>
+                <p>nom : <span id="nomSpan"><?= $ConectedUser->getnom() ?></span>
+                    <button class="buttonNom" ><i class="fas fa-pen nom"></i></button>
+                </p>
+                <p>prenom : <span id="prenomSpan"><?= $ConectedUser->getprenom() ?></span>
+                    <button class="buttonPrenom" ><i class="fas fa-pen prenom"></i></button>
+                </p>
+                <p>ville : <span id="villeSpan"><?= $ConectedUser->getville() ?></span>
+                    <button class="buttonVille" ><i class="fas fa-pen ville"></i></button>
+                </p>
+                <p>adresse :<span id="adresseSpan"> <?= $ConectedUser->getadresse() ?></span>
+                    <button class="buttonAdresse" ><i class="fas fa-pen adresse"></i></button>
+                </p>
+                <p>email :<span id="emailSpan"> <?= $ConectedUser->getemail() ?></span>
+                    <button class="buttonEmail" ><i class="fas fa-pen email"></i></button>
+                </p>
+                <p>code postal :<span id="code_postalSpan"> <?= $ConectedUser->getcode_postal() ?></span>
+                    <button class="buttonCodePostal" ><i class="fas fa-pen code_postal"></i></button>
+                </p>
+                <p>telephone :<span id="telephoneSpan"> <?= $ConectedUser->getphone() ?></span>
+                    <button class="buttonTelephone" ><i class="fas fa-pen telephone"></i></button>
+                </p>
+        </fieldset>
+        </form>
+    </main>
+    <script src="/www/Realization/restaurant/public/js/MyAccount.js"></script>
+<?php
+$content = ob_get_clean();
+$title = 'Mon compte';
+require 'view/layout.phtml';
+?>

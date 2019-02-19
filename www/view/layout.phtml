@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title><?= $title ?></title>
+    <link rel="stylesheet" href="www/vendors/fontawesome5.5/css/all.css">
+    <link rel="stylesheet" href="www/css/normalize-3.0.3.min.css">
+    <?php if ($title == "Portfolio - Diplomes") { ?><link rel="stylesheet" media="screen" href="www/vendors/flexslider/flexslider.css" /> <?php } ?>
+    <link rel="stylesheet" href="www/css/style.css">
+    <link rel="shortcut icon" type="image/png" href="favicon.png"/>
+</head>
+<body>
+    <a href="#" id="scroll" style="display: none;"><span></span></a>
+<header>
+    <?php if ($title == "Portfolio - Diplomes") {?>
+    <nav id="Main_Navigation_bar">
+        <a href="home" title="Description" class="Nav_elements">Retourner a la page principal.</a>
+    </nav>
+    <?php } else { ?>
+    <nav id="Main_Navigation_bar">
+        <a href="#about" title="Description" class="Nav_elements">Presentation</a>
+        <a href="#competencies" title="compétence" class="Nav_elements">Compétences</a>
+        <a href="#realization" title="Realisation" class="Nav_elements">Realisations</a>
+        <a href="#contact" title="contact" class="Nav_elements">Contact</a>
+    </nav>
+    <?php }?>
+</header>
+<main>
+    <?= $content ?>
+</main>
+<footer class="Unselectable_text">
+    <p> &copy; Yaci</p>
+</footer>
+</body>
+</html

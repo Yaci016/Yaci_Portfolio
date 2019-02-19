@@ -1,0 +1,52 @@
+<?php ob_start(); ?>
+<main class="center">
+<form method="post" enctype="multipart/form-data">
+    <fieldset>
+        <table>
+            <legend><i class="fas fa-check"></i> Caractéristiques </legend>
+            <tr>
+                <td>Nom : </td>
+                <td><input type="text" name="nom"></td>
+            </tr>
+            <tr>
+                <td>Description : </td>
+                <td><input type="text" name="description"></td>
+            </tr>
+            <tr>
+                <td>Categorie : </td>
+                <td><input type="text" name="Categorie"></td>
+            </tr>
+            <tr>
+                <td>Photo : </td>
+                <td><input type="file" value="Parcourir" name="Parcourir"></td>
+            </tr>
+            <tr>
+                <td>nom du fichier : </td>
+                <td><input type="text" name="filename"></td>
+            </tr>   
+        </table>
+</fieldset>
+    <fieldset class="field2">
+        <table>
+            <legend><i class="fas fa-retweet"></i> Approvisionnement</legend>
+            <tr>
+                <td>Stock initial :</td>
+                <td><input type="number" name="stock" min="1" max="500"></td>
+            </tr>
+            <tr>
+                <td>prix d'achat :</td>
+                <td><input type="number" name="achat" min="1" max="500"> €</td>
+            </tr>
+            <tr>
+                <td>Prix de vente :</td>
+                <td><input type="number" name="vente" min="1" max="500"> €</td>
+            </tr>        
+        </table>
+    </fieldset>
+    <button type="submit" name="submit" id="valider" class="créer">Ajouter</button>
+    <button type="button" id="vider" class="annuler">Annuler</button>
+</form>
+</main>
+<?php $content = ob_get_clean();
+$title = 'Gestion aliments';
+require 'view/layout.phtml'; ?>
