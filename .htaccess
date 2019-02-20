@@ -5,6 +5,8 @@ RewriteRule ^home$ index.php?action=home [L]
 
 RewriteRule ^contact$ index.php?action=contact [L]
 
+RewriteRule ^Diplomes$ index.php?action=diplomes [L]
+
 
 ##Restaurant
 
@@ -171,6 +173,7 @@ Header set Content-Security-Policy "script-src 'self' https://www.google.com htt
 <FilesMatch "\.(gif�jpe?g�png�ico�css�js�swf)$">
 Header set Cache-Control "public"
 </FilesMatch>
+
 
 RewriteCond %{SERVER_PORT} 80
 RewriteRule ^(.*)$ https://www.yaci.fr/$1 [R=301,L]
